@@ -1,0 +1,1907 @@
+@import url("https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css");
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Pacifico&family=Qwitcher+Grypen:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=League+Spartan:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Qwitcher+Grypen:wght@400;700&family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+/* 
+    font-family: "Titillium Web", sans-serif;
+    font-family: "League Spartan", sans-serif;
+    font-family: "Playfair Display", serif;
+    font-family: "Montserrat", sans-serif;
+    font-family: "Roboto Slab", serif;
+    font-family: "Open Sans", sans-serif;
+    font-family: "Qwitcher Grypen", cursive;
+    font-family: "Pacifico", cursive;
+    font-family: "Bebas Neue", sans-serif;
+
+    background-image:
+    repeating-linear-gradient(#ffdf2b 0 1px, transparent 1px 100%),
+    repeating-linear-gradient(90deg, #ffdf2b 0 1px, transparent 1px 100%);
+    background-size: 7% 14%;
+ */
+
+    scroll-behavior: smooth;
+}
+
+#invertedcursor {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background: #fff;
+    border-radius: 50%;
+    top: var(--y, 0);
+    left: var(--x, 0);
+    transform: translate(-50%, -50%);
+    z-index: 25;
+    mix-blend-mode: difference;
+    transition: transform .2s, opacity .4s, width .2s, height .2s;
+    opacity: 1;
+    pointer-events: none;
+}
+
+@keyframes inverteddestroy {
+    0%{
+        opacity: 1;
+        display: block;
+    }
+    100%{
+        opacity: 0;
+        display: none;
+        z-index: -1;
+    }
+}
+.header .header-content .title .name:hover~#invertedcursor{
+    width: 300px;
+    height: 300px;
+    transition: transform .2s, opacity .4s, width .2s, height .2s;
+}
+.header .header-content .title .subname:hover~#invertedcursor{
+    width: 250px;
+    height: 250px;
+    transition: transform .2s, opacity .4s, width .2s, height .2s;
+}
+/* Circulations */
+.circulations{
+    width: 100%;
+    height: 100vh;
+    z-index: 30;
+    position: fixed;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    animation: fadeOut 1s 12s linear forwards;
+    overflow: hidden;
+    overscroll-behavior: contain;
+}
+
+.circulations .circle{
+    height: calc(var(--i) * 20px);
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    background-color: #000000;
+    position: absolute;
+    z-index: 1;
+    border: 5px solid white;
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.circulations .circle button{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: transparent;
+    border: 1px solid transparent;
+    box-shadow: none;
+}
+.circulations .circle:nth-child(1){
+    z-index: 9;
+    opacity: 1;
+    animation: fadeIn 1s linear forwards, glop 2s steps(1, end) infinite forwards !important;
+}
+.circulations .circle:nth-child(2){
+    z-index: 8;
+    animation: fadeIn 1s 1s linear forwards, glopRe 2s steps(1, end) infinite forwards !important;
+}
+.circulations .circle:nth-child(3){
+    z-index: 7;
+    animation: fadeIn 1s 2s linear forwards, glop 2s steps(1, end) infinite forwards !important;
+}
+.circulations .circle:nth-child(4){
+    z-index: 6;
+    animation: fadeIn 1s 3s linear forwards, glopRe 2s steps(1, end) infinite forwards !important;
+}
+.circulations .circle:nth-child(5){
+    z-index: 5;
+    animation: fadeIn 1s 4s linear forwards, glop 2s steps(1, end) infinite forwards !important;
+}
+.circulations .circle:nth-child(6){
+    z-index: 4;
+    animation: fadeIn 1s 5s linear forwards, glopRe 2s steps(1, end) infinite forwards !important;
+}
+.circulations .circle:nth-child(7){
+    z-index: 3;
+    animation: fadeIn 1s 6s linear forwards, glop 2s steps(1, end) infinite forwards !important;
+}
+.circulations .circle:nth-child(8){
+    z-index: 2;
+    animation: fadeIn 1s 7s linear forwards, glopRe 2s steps(1, end) infinite forwards !important;
+}
+.circulations .circle:nth-child(9){
+    z-index: 1;
+    animation: fadeIn 1s 8s linear forwards, glop 2s steps(1, end) infinite forwards !important;
+}
+
+@keyframes glop {
+    0%, 100%{
+        background-color: black;
+    }
+    50%{
+        background-color: white;
+    }
+}
+@keyframes glopRe {
+    0%, 100%{
+        background-color: white;
+    }
+    50%{
+        background-color: black;
+    }
+}
+@keyframes fadeIn {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+@keyframes fadeOut {
+    0%{
+        opacity: 1;
+        display: none;
+        z-index: 30;
+    }
+    100%{
+        display: none;
+        opacity: 0;
+        z-index: 0;
+        visibility: none;
+        cursor: default;
+    }
+}
+
+/* Header */
+
+.header{
+    width: 100%;
+    height: 100vh;
+    min-height: 720px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+.header .header-content{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* Side Bars */
+
+.navbar{
+    width: 10%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    background-color: transparent;
+    position: fixed;
+    left: 0;
+    top: 0;
+    transform: translateY(-100%);
+    z-index: 20;
+    animation: navbarfadein 0.5s 13.5s ease-in-out forwards;
+}
+.navbar .options{
+    width: 80%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+}
+.navbar .options .option{
+    width: 100%;
+    height: 20%;
+    margin: 20px 0;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    background-color: transparent;
+    position: relative;
+    text-decoration: none;
+}
+.navbar .options .option input[type="radio"]{
+    visibility: hidden;
+    position: absolute;
+}
+.navbar .options .option input[type="radio"]:checked{
+    visibility: hidden;
+}
+.navbar .options .option input[type="radio"]:checked~label{
+    color: #fff;
+    transition: 0.5s;
+    -webkit-text-stroke: 1px transparent;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    background-color: black;
+}
+.navbar .options .option input[type="radio"]:checked~label a{
+    color: white;
+}
+.navbar .options .option label{
+    color: black;
+    min-width: 100%;
+    height: 100%;
+    font-size: 2em;
+    padding-left: 20px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    background-color: #ffffff;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: 0.5s;
+    -webkit-text-stroke: 1px transparent;
+    border-radius: 0 20px 20px 0;
+    font-family: "Bebas Neue", sans-serif;
+}
+.navbar .options .option label a{
+    text-decoration: none;
+    color: black;
+    background-color: transparent;
+    min-width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding-left: 25px;
+    transform: translateX(-22px);
+    transition: 0.5s;
+}
+
+@keyframes navbarfadein {
+    0%{
+        transform: translateX(-100%) translateY(50%);
+    }
+    100%{
+        transform: translateY(0%) translateY(50%);
+    }
+}
+
+/* Contact Elements */
+.header .header-content .contactelements{
+    width: 10%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    background-color: transparent;
+    align-items: end;
+    position: absolute;
+    right: 0;
+}
+.header .header-content .contactelements .element{
+    height: 10%;
+    aspect-ratio: 1/1;
+    border: 2px solid black;
+    margin: 10px 20px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background-color: #fff;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.header .header-content .contactelements .element a{
+    text-decoration: none;
+    color: black;
+    font-size: 1em;
+    font-family: "Bebas Neue", sans-serif;
+}
+.header .header-content .contactelements .element a i{
+    font-size: 1.2em;
+}
+
+/* Header Title Content */
+
+.header .header-content .title{
+    width: 80%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.header .header-content .title .name{
+    width: 90%;
+    min-height: 20%;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.header .header-content .title .name h1{
+    font-size: 7em;
+    color: rgba(255, 255, 255, 0.9);
+    font-family: "Open Sans", sans-serif;
+    -webkit-text-stroke: 1px black;
+    color: black;
+    text-shadow: rgba(0, 0, 0, 0.2) 0px 15px 100px;
+    animation: titleAnim 2s 14s linear forwards;
+    z-index: 10;
+}
+.header .header-content .title .name .hiddenshadow{
+    font-size: 7em;
+    color: transparent;
+    font-family: "Open Sans", sans-serif;
+    animation: titleAnim 2s linear forwards, titleAnim 3s 2s linear forwards;
+    text-shadow: rgba(0, 0, 0, 0.5) 0px 15px 20px;
+    z-index: 1;
+    position: absolute;
+}
+.header .header-content .title .subname{
+    width: 50%;
+    min-height: 80px;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.header .header-content .title .subname p{
+    font-size: 2em;
+    font-family: "League Spartan", sans-serif;
+
+    position: relative;    
+    word-break: break-all;
+    line-break: pre;
+
+
+    text-shadow: red 0px 20px,
+    yellow 0px 40px;
+
+    overflow: hidden; 
+    height: 100%;
+    border-right: .14em solid transparent; 
+    white-space: nowrap;
+    letter-spacing: .15em;
+    width: 0;
+    animation:
+      typing 1.2s 14.5s steps(10, end) forwards,
+      blink-caret .75s 14s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 33% }
+  }
+  
+  /* The typewriter cursor effect */
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: #e4e2e2; }
+}
+
+
+
+@keyframes titleAnim {
+    0%, 100%{
+        font-family: "Open Sans", sans-serif;
+    }
+    20%{
+        font-family: "League Spartan", sans-serif;
+    }
+    30%{
+        font-family: "Titillium Web", sans-serif;
+    }
+    40%{
+        font-family: "Playfair Display", serif;
+    }
+    50%{
+        font-family: "Montserrat", sans-serif;
+    }
+    60%{
+        font-family: "Roboto Slab", serif;
+    }
+    70%{
+        font-family: "Qwitcher Grypen", cursive;
+    }
+    80%{
+        font-family: "Pacifico", cursive;
+    }
+    90%{
+        font-family: "Bebas Neue", sans-serif;
+    }
+}
+
+
+
+
+
+/* ABOUT */
+
+.about{
+    background-color: black;
+    color: white;
+    overscroll-behavior: contain;
+    width: 100%;
+    min-height: 1097px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.about .about-content{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.about .about-content .title{
+    width: 80%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.about .about-content .title .name{
+    width: 80%;
+    height: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    background-color: transparent;
+    background-color: #afafff;
+    margin-bottom: 5px;
+    border-bottom: 1px solid white;
+    cursor: pointer;
+}
+.about .about-content .title .name h1{
+    font-size: 3em;
+    color: #fff;
+    font-family: "Open Sans", sans-serif;
+    z-index: 10;
+    padding-left: 20px;
+}
+.about .about-content .title .subname{
+    width: 80%;
+    height: 50%;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    background-color: transparent;
+}
+.about .about-content .title .subname p{
+    font-size: 2em;
+    margin: 25px 0 5px 0;
+    font-family: "League Spartan", sans-serif;
+    padding-bottom: 10px;
+    border-bottom: 1px solid white;
+    padding-left: 20px;
+}
+.about .about-content .title .subname p:nth-of-type(even){
+    text-align: left;
+}
+
+/* About Elements */
+
+.about .about-content .contactelements{
+    width: 15%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    background-color: transparent;
+    align-items: end;
+    position: absolute;
+    overflow: hidden;
+    right: 0;
+}
+.about .about-content .contactelements .elements {
+    position: relative;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    min-width: 500px;
+    min-height: 500px;
+    transform: translateX(75%);
+    animation: rotateelements 10s infinite forwards;
+    background-color: transparent;
+}
+.about .about-content .contactelements .elements .element{
+    width: 15%;
+    aspect-ratio: 1/1;
+    border: 2px solid black;
+    margin: 10px 20px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background-color: #fff;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    position: absolute;
+    left: calc(50% - 30px);
+    top: calc(50% - 30px);
+    border: 2px solid #000000;
+    border-radius: 50%;
+    font-family: "Bebas Neue", sans-serif;
+}
+.about .about-content .contactelements .elements .element a{
+    text-decoration: none;
+    color: black;
+    font-size: 1em;
+    transform: rotateZ(180deg);
+}
+.about .about-content .contactelements .elements .element a i{
+    font-size: 1.2em;
+}
+.about .about-content .contactelements .elements .element:nth-child(1), .contactme .contact-content .contactelements .elements .element:nth-child(1){
+    transform: rotate(216deg) translateX(240px);
+}
+.about .about-content .contactelements .elements .element:nth-child(2), .contactme .contact-content .contactelements .elements .element:nth-child(2) {
+    transform: rotate(180deg) translateX(260px);
+}
+.about .about-content .contactelements .elements .element:nth-child(3), .contactme .contact-content .contactelements .elements .element:nth-child(3) {
+    transform: rotate(144deg) translateX(230px);
+}
+.about .about-content .contactelements .elements .element:nth-child(4), .contactme .contact-content .contactelements .elements .element:nth-child(4) {
+    transform: rotate(252deg) translateX(230px);
+}
+.about .about-content .contactelements .elements .element:nth-child(5), .contactme .contact-content .contactelements .elements .element:nth-child(5) {
+    transform: rotate(288deg) translateX(230px);
+}
+.about .about-content .contactelements .elements .element:nth-child(6), .contactme .contact-content .contactelements .elements .element:nth-child(6) {
+    transform: rotate(72deg) translateX(230px);
+}
+.about .about-content .contactelements .elements .element:nth-child(7), .contactme .contact-content .contactelements .elements .element:nth-child(7) {
+    transform: rotate(108deg) translateX(230px);
+}
+@keyframes rotateelements {
+    0%{
+        transform:translateX(75%) rotate(0deg);
+    }
+    100%{
+        transform:translateX(75%) rotate(360deg);
+    }
+}
+@keyframes rotateelementsLeft {
+    0%{
+        transform:translateX(3.5%) rotate(360deg);
+    }
+    100%{
+        transform:translateX(3.5%) rotate(0deg);
+    }
+}
+
+@keyframes rotateelementsInside {
+    0%{
+        transform:rotateZ(-180deg);
+    }
+    100%{
+        transform:rotateZ(180deg);
+    }
+}
+.about .about-content .contactelements.leftcontact{
+    left: 0 !important;
+    padding-right: 80px !important;
+}
+
+.about .about-content .leftcontact .elements{
+    animation: rotateelementsLeft 10s infinite forwards !important;
+}
+.about .about-content .leftcontact .elements .element a{
+    transform: rotateZ(0deg) !important;
+}
+
+/* About skills */
+
+.about .about-skills{
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    margin: 80px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.about .about-skills .title{
+    width: 80%;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.about .about-skills .title .name{
+    width: 80%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #afafff;
+    position: relative;
+	background: #afafff;
+	border-radius: 25px;
+	box-shadow: 0 0 20px #c9c9ff;
+    cursor: pointer;
+    background: radial-gradient(ellipse at bottom, #c9c9ff, #afafff);
+}
+.about .about-skills .title .name h1{
+    font-size: 2.5em;
+    color: #fff;
+    font-family: "Open Sans", sans-serif;
+    z-index: 10;
+}
+
+.about .about-skills .languages{
+    width: 80%;
+    height: 80px;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background: radial-gradient(ellipse at top, #c9c9ff, #afafff);
+    margin: 50px 0;
+    border-radius: 50px;
+	box-shadow: 0 0 20px #c9c9ff;
+    transition: 0.5s;
+}
+.about .about-skills .languages:hover{
+    height: 400px;
+    transition: 0.5s;
+}
+
+.about .about-skills .languages .items{
+    min-width: 100%;
+    max-width: 100%;
+    height: 80%;
+    background-color: transparent;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    overflow-x: scroll;
+    border-radius: 50px;
+    scrollbar-width: none;
+    z-index: 1;
+}
+.about .about-skills .languages .items .item{
+    min-width: 15%;
+    height: 70px;
+    background-color: white;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.5s;
+    margin: 0 10px;
+    position: relative;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    border-radius: 8px 8px 0 0;
+}
+.about .about-skills .languages .items .item .item-text{
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px 8px 0 0;
+    backdrop-filter: blur(20px);
+}
+.about .about-skills .languages .items .item h1{
+    color: black;
+    font-size: 1.5em;
+    font-family: "League Spartan", sans-serif;
+    text-shadow: red 0px 0px 45px;
+}
+.about .about-skills .languages .items .item:nth-child(2n) h1{
+    text-shadow: blue 0px 0px 45px;
+}
+.about .about-skills .languages .items .item:nth-child(3n) h1{
+    text-shadow: yellow 0px 0px 45px;
+}
+.about .about-skills .languages .items .item:nth-child(4n) h1{
+    text-shadow: rebeccapurple 0px 0px 45px;
+}
+.about .about-skills .languages .items .item h1::before{
+    content: attr(REFL-TEXT);
+    position: absolute;
+    bottom: 0%;
+    left: 0%;
+    width: 100%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    transform: rotateX(180deg);
+    line-height: 20px;
+    transform-origin: bottom;
+    background: linear-gradient(to top, #fff, transparent);
+    color: rgba(0, 0, 0, 0.3);
+    opacity: 0.4;
+    z-index: 20;
+}
+.about .about-skills .languages .items .item:hover{
+    transition: 0.5s;
+    scale: 1.1;
+}
+
+@keyframes slide {
+    
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+
+}
+.about .about-skills .languages .items .item .img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px 8px 0 0;
+    z-index: 1;
+    opacity: 1;
+    transition: 0.5s;
+}
+.about .about-skills .languages .items .item .img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px 8px 0 0;
+}
+.about .about-skills .languages .items .item:hover .img{
+    opacity: 1;
+    transition: 0.5s;
+    transform: translateY(0%);
+}
+
+
+.about .about-skills .languages .hoverme{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: #000000;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(ellipse at top, #c9c9ff, #afafff);
+    border-radius: 50px;
+    transition: 0.5s;
+    opacity: 1;
+}
+.about .about-skills .languages .hoverme h1{
+    font-size: 3em;
+    font-family: 'Courier New', Courier, monospace;
+    cursor: pointer;
+}
+.about .about-skills .languages:hover .hoverme{
+    opacity: 0;
+    z-index: 0;
+    transition: 0.5s;
+}
+
+/* Projects */
+
+.projects{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+}
+
+.projects .project-content{
+    width: 80%;
+    min-height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+.projects .project-content .title{
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    margin: 50px 0;
+}
+.projects .project-content .title .name{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.projects .project-content .title .name h1{
+    font-size: 4em;
+    font-family: "Montserrat", sans-serif;
+}
+.projects .project-content .project-type-title{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    font-size: 550px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Titillium Web", sans-serif;
+    -webkit-text-stroke: 5px #fff;
+    color: #afafff;
+}
+
+.projects .project-content .projectitems{
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: start;
+    align-items: center;
+    place-items: center;
+    place-content: center;
+    position: relative;
+    padding-top: 50px;
+    padding-bottom: 150px;
+    border-top: 4px solid rgba(175, 175, 255, 0.5);
+}
+.projects .project-content .projectitems .projectitem{
+    min-width: 300px;
+    max-width: 300px;
+    background-color: transparent;
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.projects .project-content .projectitems .projectitem:hover{
+    min-width: 400px !important;
+    transition: 0.5s;
+}
+.projects .project-content .projectitems .projectitem .gosite{
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    transition: 0.5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+}
+.projects .project-content .projectitems .projectitem .gosite a{
+    width: 90px;
+    height: 90px;
+    border: 1px solid black;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4em;
+    background-color: white;
+    text-decoration: none;
+    color: black;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
+}
+.projects .project-content .projectitems .projectitem:hover .gosite{
+    transform: translateX(52%);
+    transition: 0.5s;
+}
+.projects .project-content .projectitems .projectitem .item{
+    width: 100%;
+    max-height: 100%;
+    min-height: 100%;
+    background-color: transparent;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    transition: 0.5s;
+    text-decoration: none;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+.projects .project-content .projectitems .projectitem .item:hover{
+    transition: 0.5s;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    z-index: 20;
+}
+.projects .project-content .projectitems .projectitem .item .itemimg{
+    width: 100%;
+    height: 70%;
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.projects .project-content .projectitems .projectitem .item .itemimg .img{
+    width: 100%;
+    aspect-ratio: 16/9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+}
+.projects .project-content .projectitems .projectitem .item .itemimg .img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px 20px 0 0;
+    border: 1px solid black;
+    z-index: 3;
+}
+.projects .project-content .projectitems .projectitem .item .itemimg .img video{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px 20px 0 0;
+    border: 1px solid black;
+    position: absolute;
+    opacity: 0;
+    z-index: 2;
+    display: none;
+    transition: 0.3s;
+    pointer-events: none;
+}
+.projects .project-content .projectitems .projectitem:hover .item .itemimg .img video{
+    z-index: 5;
+    display: flex;
+    opacity: 1;
+    transition: 0.3s;
+}
+.projects .project-content .projectitems .projectitem .item .iteminfo{
+    width: 100%;
+    height: 30%;
+    background-color: black;
+    border-radius: 0 0 20px 20px;
+}
+.projects .project-content .projectitems .projectitem .item .iteminfo .info{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.projects .project-content .projectitems .projectitem .item .iteminfo .info .info-title, .projects .project-content .projectitems .projectitem .item .iteminfo .info .info-subtext{
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+.projects .project-content .projectitems .projectitem .item .iteminfo .info .info-title h1{
+    font-size: 1.8em;
+    color: #fff;
+    margin: 0 20px;
+    font-family: "Titillium Web", sans-serif;
+}
+.projects .project-content .projectitems .projectitem .item .iteminfo .info .info-subtext p{
+    font-size: 1.2em;
+    color: #fff;
+    margin: 0 20px;
+    font-family: "League Spartan", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+    letter-spacing: 1px;
+}
+.projects .project-content .projectitems .projectitem .item .itemimg .madewith{
+    width: 95%;
+    height: 20%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: transparent;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    z-index: 10;
+}
+.projects .project-content .projectitems .projectitem .item .itemimg .madewith .element{
+    min-width: 50px;
+    height: 100%;
+    background-color: rgba(175, 175, 255, 0.8);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px 8px 0 0;
+    padding: 0 5px;
+}
+.projects .project-content .projectitems .projectitem .item .itemimg .madewith .element p{
+    color: white;
+    font-size: 1em;
+    font-family: "Montserrat", sans-serif;
+}
+.projects .project-content .projectitems .projectitem .item .itemimg .madewith .element:nth-child(2n){
+    background-color: rgba(255, 255, 0, 0.8);
+}
+.projects .project-content .projectitems .projectitem .item .itemimg .madewith .element:nth-child(3n){
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+
+.projects .project-content .projectitems .loadmore{
+    width: 200px;
+    height: 100px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-color: #c9c9ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0 20px 20px 0;
+    transition: 0.5s;
+}
+.projects .project-content .projectitems .loadmore:hover{
+    width: 300px;
+    transition: 0.5s;
+}
+.projects .project-content .projectitems .loadmore a{
+    text-decoration: none;
+    color: white;
+    font-size: 2em;
+    font-family: "Montserrat", sans-serif;
+}
+
+/* Games */
+.projects .project-content .gameitems{
+    width: 100%;
+    min-height: 100vh;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    margin-top: 20px;
+}
+.projects .project-content .gameitems .title{
+    width: 100%;
+    height: 20vh;
+    display: flex;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    margin: 10px 0 10px 0;
+    background-color: transparent;
+    border-top: 4px solid #afafff;
+    border-bottom: 4px solid #afafff;
+    position: relative;
+    background-color: #000000;
+    background-image:
+    repeating-linear-gradient(#ffdf2b 0 1px, transparent 1px 100%),
+    repeating-linear-gradient(90deg, #ffdf2b 0 1px, transparent 1px 100%);
+    background-size: 100px 90px;
+    background-position: center;
+}
+.projects .project-content .gameitems .title h1{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 5em;
+    font-family: "Montserrat", sans-serif;
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+    color: white;
+}
+.projects .project-content .gameitems .title .copy{
+    position: absolute;
+    z-index: 1;
+    width: 50%;
+    height: 100%;
+}
+.projects .project-content .gameitems .title .copy{
+    animation: retrobloom 1.5s 0.5s infinite forwards;
+    color: yellow;
+}
+.projects .project-content .gameitems .title .copy:nth-child(2){
+    animation: retrobloom 1.5s 1s infinite forwards;
+    color: red;
+}
+.projects .project-content .gameitems .title .copy:nth-child(3){
+    animation: retrobloom 1.5s 1.5s infinite forwards;
+    color: blue;
+}
+.projects .project-content .gameitems .title .copy:nth-child(4){
+    animation: retrobloom 1.5s 2s infinite forwards;
+    color: green;
+}
+
+.projects .project-content .gameitems .title .copy:nth-child(5){
+    animation: retrobloom 1.5s 2.5s infinite forwards;
+    color: #c9c9ff;
+}
+
+
+@keyframes retrobloom {
+    0%{
+        scale: 1;
+        opacity: 1;
+    }
+    100%{
+        scale: 1.3;
+        opacity: 0;
+    }
+}
+
+
+
+.projects .project-content .gameitems .studio-logo{
+    width: 100%;
+    min-height: 35vh;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 4px solid #afafff;
+    position: relative;
+}
+.projects .project-content .gameitems .studio-logo .loadmore{
+    width: 200px;
+    height: 100px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: #c9c9ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px 0 0 20px;
+    transition: 0.5s;
+}
+.projects .project-content .gameitems .studio-logo .loadmore:hover{
+    width: 300px;
+    transition: 0.5s;
+}
+.projects .project-content .gameitems .studio-logo .loadmore a{
+    text-decoration: none;
+    color: white;
+    font-size: 2em;
+    font-family: "Montserrat", sans-serif;
+}
+
+.projects .project-content .gameitems .studio-logo .logo{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.projects .project-content .gameitems .studio-logo .logo p{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-family: "Bebas Neue", sans-serif; 
+    font-size: 1em;
+    cursor: pointer;
+}
+.projects .project-content .gameitems .studio-logo .logo h1{
+    font-family: "Bebas Neue", sans-serif; 
+    font-size: 1.4em;
+    cursor: pointer;
+}
+.projects .project-content .gameitems .studio-logo .logo p span{
+    font-size: 10em;
+    font-weight: 500;
+    height: 100%;
+}
+.projects .project-content .gameitems .studio-logo .logo p span:nth-child(1){
+    color: #ffdf2b;
+    -webkit-text-stroke: 2px #ffdf2b;
+    animation: 1s fadeinfromup ease-in-out forwards;
+}
+.projects .project-content .gameitems .studio-logo .logo p span:nth-child(2){
+    color: black;
+    height: 50%;
+    animation: 1s fadein ease-in-out forwards;
+}
+.projects .project-content .gameitems .studio-logo .logo p span:nth-child(3){
+    color: white;
+    -webkit-text-stroke: 5px #ffdf2b;
+    animation: 1s fadeinfromdown ease-in-out forwards;
+}
+.projects .project-content .gameitems .studio-logo .logo p .andelement{
+    font-size: 4em;
+    height: 40%;
+}
+
+.projects .project-content .gameitems .studio-logo .logo .value{
+    height: 400px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+}
+.projects .project-content .gameitems .studio-logo .logo .value img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.projects .project-content .gameitems .studio-logo .logo .value p{
+    position: absolute;
+    font-size: 5em;
+    bottom: 0%;
+    color: transparent;
+    -webkit-text-stroke: 2px #000000;
+}
+
+
+/* Game grid */
+
+.projects .project-content .gameitems .items{
+    width: 100%;
+    min-height: 50vh; 
+    background-color: transparent;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: start;
+    margin-top: 50px;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    place-self: center;
+    place-items: center;
+    overflow: hidden;
+}
+.projects .project-content .gameitems .items .game_item:nth-child(1){
+    grid-row: 1/2 span;
+    width: 700px;
+    height: 500px;
+    font-size: 2em;
+}
+.projects .project-content .gameitems .items .game_item{
+    width: 400px;
+    height: 250px;
+    background-color: #afafff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    cursor: pointer;
+    margin: 20px 20px;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #c9c9ff;
+    position: relative;
+    display:none; 
+}
+.hiddenbar{
+    opacity: 0 !important;
+    transition: 0.2s;
+}
+.projects .project-content .gameitems .items .game_item .itemvisual{
+    width: 100%;
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    position: relative;
+    background-color: #afafff;
+}
+.projects .project-content .gameitems .items .game_item .itemvisual video, 
+.projects .project-content .gameitems .items .game_item .itemvisual img{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.projects .project-content .gameitems .items .game_item .iteminfo{
+    width: 100%;
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    color: white;
+}
+.projects .project-content .gameitems .items .game_item .iteminfo h1,
+.projects .project-content .gameitems .items .game_item .iteminfo p{
+    font-size: 2.1em;
+    font-family: "Bebas Neue", sans-serif;
+}
+.projects .project-content .gameitems .items .game_item .iteminfo p{
+    font-size: 1.2em;
+    font-family: "League Spartan", sans-serif;
+}
+
+.projects .project-content .gameitems .items .game_item .play{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform: translateX(0%);
+    left: -100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s;
+    z-index: 10;
+}
+.projects .project-content .gameitems .items .game_item:hover .play{
+    transform: translateX(0%);
+    left: 0;
+    transition: 0.4s;
+    animation: shake 2s ease-in-out forwards;
+}
+.projects .project-content .gameitems .items .game_item .play a{
+    font-size: 4em;
+    text-decoration: none;
+    color: #ffdf2b;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    transition: 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    scale: 0.1;
+    font-family: "Titillium Web", sans-serif;
+    font-family: "League Spartan", sans-serif;
+    font-family: "Playfair Display", serif;
+    font-family: "Montserrat", sans-serif;
+    font-family: "Roboto Slab", serif;
+    border-radius: 8px;
+}
+.projects .project-content .gameitems .items .game_item .soon a{
+    background-color: rgba(255, 255, 255, 1);
+    width: fit-content;
+    height: fit-content;
+}
+.projects .project-content .gameitems .items .game_item:hover .play a{
+    opacity: 1;
+    transition: 0.3s;
+    scale: 1;
+}
+.projects .project-content .gameitems .items .game_item .play a i{
+    font-size: 3em;
+    color: #ffdf2b;
+}
+.projects .project-content .gameitems .items .game_item .play img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.projects .project-content .gameitems .items .game_item:hover{
+    animation: blop 0.3s ease-in-out forwards;
+}
+
+
+@keyframes blop {
+    0%, 100%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(-1px, -2px) rotate(-5deg); }
+}
+.projects .project-content .gameitems .items .game_item .itemvisual .studio-name{
+    position: absolute;
+    z-index: 2;
+    width: 40%;
+    height: 30%;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 0 20px 0 0;
+    font-family: "Bebas Neue", sans-serif;
+}
+.projects .project-content .gameitems .items .game_item .itemvisual .studio-name p{
+    font-size: 1.2em;
+}
+.projects .project-content .gameitems .items .game_item .itemvisual .studio-name img{
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    position: absolute;
+    left: 0px;
+}
+.projects .project-content .gameitems .items .game_item .itemvisual .studio-name p span{
+    font-weight: 500;
+    height: 100%;
+    font-size: 1.5em;
+}
+.projects .project-content .gameitems .items .game_item .itemvisual .studio-name p span:nth-child(1){
+    color: #ffdf2b;
+    -webkit-text-stroke: 1px #ffdf2b;
+    animation: 1s fadeinfromup ease-in-out forwards;
+}
+.projects .project-content .gameitems .items .game_item .itemvisual .studio-name p span:nth-child(2){
+    color: black;
+    height: 50%;
+    animation: 1s fadein ease-in-out forwards;
+}
+.projects .project-content .gameitems .items .game_item .itemvisual .studio-name p span:nth-child(3){
+    color: white;
+    -webkit-text-stroke: 1px #ffdf2b;
+    animation: 1s fadeinfromdown ease-in-out forwards;
+}
+.projects .project-content .gameitems .items .game_item .itemvisual .studio-name p .andelement{
+    height: 40%;
+    font-size: 1em;
+}
+
+/* CONTACT */
+
+
+.contactme{
+    background-color: black;
+    color: white;
+    overscroll-behavior: contain;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 200px;
+}
+.contactme .contact-content{
+    width: 88%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contactme .contact-content .title{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 20;
+}
+.contactme .contact-content .title .name{
+    width: 80%;
+    height: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    background-color: transparent;
+    background-color: #afafff;
+    margin-bottom: 5px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+.contactme .contact-content .title .name h1{
+    font-size: 3em;
+    color: #fff;
+    font-family: "Open Sans", sans-serif;
+    z-index: 10;
+    padding-left: 20px;
+}
+.contactme .contact-content .title .subname{
+    width: 80%;
+    height: 50%;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    background-color: transparent;
+}
+.contactme .contact-content .title .subname p{
+    font-size: 2em;
+    margin: 25px 0 5px 0;
+    font-family: "League Spartan", sans-serif;
+    padding-bottom: 10px;
+    padding-left: 20px;
+}
+.contactme .contact-content .title .subname p:nth-of-type(even){
+    text-align: left;
+}
+
+
+.contactme .contact-content .contactelements{
+    width: 15%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    background-color: transparent;
+    align-items: end;
+    position: absolute;
+    overflow: hidden;
+    right: 0;
+}
+.contactme .contact-content .contactelements .elements {
+    position: relative;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    min-width: 500px;
+    min-height: 500px;
+    transform: translateX(75%);
+    animation: rotateelements 10s infinite forwards;
+    background-color: transparent;
+}
+.contactme .contact-content .contactelements .elements .element{
+    width: 15%;
+    aspect-ratio: 1/1;
+    border: 2px solid black;
+    margin: 10px 20px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background-color: #fff;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    position: absolute;
+    left: calc(50% - 30px);
+    top: calc(50% - 30px);
+    border: 2px solid #000000;
+    border-radius: 50%;
+    font-family: "Bebas Neue", sans-serif;
+}
+.contactme .contact-content .contactelements .elements .element a{
+    text-decoration: none;
+    color: black;
+    font-size: 1em;
+    transform: rotateZ(180deg);
+}
+.contactme .contact-content .contactelements .elements .element a i{
+    font-size: 1.2em;
+}
+.contactme .contact-content .contactelements.leftcontact{
+    left: 0 !important;
+    padding-right: 80px !important;
+}
+
+.contactme .contact-content .leftcontact .elements{
+    animation: rotateelementsLeft 10s infinite forwards !important;
+}
+.contactme .contact-content .leftcontact .elements .element a{
+    transform: rotateZ(0deg) !important;
+}
+
+
+/* Form */
+.contactme .contact-content .contactform {
+    width: 50%;
+    min-height: 600px;
+    background-color: #afafff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin: 20px 0 50px 0;
+    border-radius: 8px;
+    background-image:
+    repeating-linear-gradient(#ffffff6c 0 1px, transparent 1px 100%),
+    repeating-linear-gradient(90deg, #ffffff6c 0 1px, transparent 1px 100%);
+    background-size: 100px 120px;
+    padding: 10px 0;
+}
+.contactme .contact-content .contactform .form{
+    width: 70%;
+    height: 600px;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    position: relative;
+    padding-top: 20px;
+}
+.contactme .contact-content .contactform .form .input-field{
+    width: 100%;
+    min-height: 90px;
+    background-color: transparent;
+    margin: 5px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    transition: 0.5s; 
+}
+.contactme .contact-content .contactform .form .input-field input{
+    width: 90%;
+    min-height: 50px;
+    border: 1px solid black;
+    border-radius: 20px;
+    padding-left: 20px;
+    font-size: 1.1em;
+    outline: none;
+    position: relative;
+    z-index: 2;
+}
+.contactme .contact-content .contactform .form .input-field label{
+    width: 90%;
+    height: 30px;
+    font-size: 1.7em;
+    font-family: "Titillium Web", sans-serif;
+    margin: 0 0 10px 0;
+    cursor: pointer;
+    z-index: 2;
+}
+.contactme .contact-content .contactform .form .input-field textarea{
+    width: 90%;
+    min-height: 140px;
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 10px;
+    font-size: 1.2em;
+    margin: 5px 0;
+    font-family: "Titillium Web", sans-serif;
+    resize: none;
+    z-index: 2;
+}
+.contactme .contact-content .contactform .form .input-field button{
+    width: 90%;
+    height: 50px;
+    border: 1px solid black;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 1.8em;
+    background-color: black;
+    color: white;
+    font-family: "Titillium Web", sans-serif;
+    z-index: 2;
+}
+
+.contactme .contact-content .contactform .form .input-field::before{
+    content: '';
+    width: 0;
+    height: 100%;
+    position: absolute;
+    bottom: 0;
+    background-color: #000000;
+    transition: 0.5s;
+    z-index: 0;
+    border-radius: 10px;
+    background-image:
+    repeating-linear-gradient(#afafff 0 1px, transparent 1px 100%),
+    repeating-linear-gradient(90deg, #afafff 0 1px, transparent 1px 100%);
+    background-size: 50px 50px;
+}
+.contactme .contact-content .contactform .form .input-field:hover::before{
+    width: 0%;
+    transition: 0.5s;
+    bottom: -20px;
+}
+
+/* Contact Links.. not in use */
+.contactme .contact-content .contactform .contact-links{
+    width: 30%;
+    height: 800px;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+}
+.contactme .contact-content .contactform .contact-links .links{
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: end;
+    align-items: start;
+    background-color: transparent;
+}
+.contactme .contact-content .contactform .contact-links .links .link{
+    width: 15%;
+    aspect-ratio: 1/1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: white;
+    border: 1px solid black;
+    color: black;
+    margin: 25px 15px;
+    cursor: pointer;
+}
+.contactme .contact-content .contactform .contact-links .sublink{
+    width: 100%;
+    height: 50%;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    text-align: end;
+}
+.contactme .contact-content .contactform .contact-links .sublink p{
+    font-size: 2em;
+    font-family: "Titillium Web", sans-serif;
+    margin-right: 20px;
+    margin-top: 40px;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+/* Footer */
+
+.footer{
+    width: 100%;
+    height: 30vh;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.footer .navigations{
+    width: 80%;
+    height: 15vh;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.4);
+}
+.footer .navigations .navigation{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.footer .navigations .navigation ul{
+    width: 100%;
+    height: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+.footer .navigations .navigation ul li{
+    margin: 0 20px;
+    border-bottom: 3px solid transparent;
+    transition: 0.5s;
+    opacity: 0.5;
+}
+.footer .navigations .navigation ul li a{
+    text-decoration: none;
+    color: white;
+    font-size: 1.4em;
+    font-family: "League Spartan", sans-serif;
+    transition: 0.5s;
+}
+.footer .navigations .navigation ul li:hover{
+    border-bottom: 3px solid white;
+    transition: 0.5s;
+    opacity: 1;
+}
+.footer .navigations .links{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+.footer .navigations .links a{
+    margin: 0 20px;
+    font-size: 1.4em;
+    font-family: "League Spartan", sans-serif;
+    transition: 0.5s;
+    border-bottom: 3px solid transparent;
+    transition: 0.5s;
+    color: white;
+    opacity: 0.5;
+    text-decoration: none;
+}
+.footer .navigations .links a:hover{
+    border-bottom: 3px solid white;
+    opacity: 1;
+}
+
+#response-message{
+    width: 100%;
+    font-family: "League Spartan", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    font-size: 2em;
+    position: absolute;
+    top: -20px;
+    right: 0;
+    z-index: 10;
+    color: #fff;
+    opacity: 1;
+    pointer-events: none;
+    background-color: #000000;
+    border-radius: 20px;
+}
