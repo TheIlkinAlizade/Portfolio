@@ -1905,3 +1905,295 @@
     background-color: #000000;
     border-radius: 20px;
 }
+
+@media (max-width: 1200px) {
+    .header .header-content .title .name h1{
+        font-size: 5.5em;
+    }
+    .header .header-content .title .subname p{
+        font-size: 1.6em;
+    }
+    .projects .project-content .projectitems{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .projects .project-content .gameitems .items{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .projects .project-content .gameitems .items .game_item:nth-child(1){
+        width: 500px;
+        height: 400px;
+        font-size: 1em;
+    }
+    .about .about-content .contactelements .elements,
+    .contactme .contact-content .contactelements .elements{
+        min-width: 350px;
+        min-height: 350px;
+    }
+}
+
+@media (max-width: 992px) {
+    .navbar{
+        width: auto;
+        height: auto;
+        top: 20px;
+        transform: translateY(0);
+    }
+    .navbar .options .option{
+        height: auto;
+        margin: 10px 0;
+    }
+    .navbar .options .option label{
+        font-size: 1.2em;
+        padding: 10px 20px;
+    }
+    .header .header-content .title .name h1{
+        font-size: 4em;
+    }
+    .header .header-content .title .subname p{
+        font-size: 1.3em;
+    }
+    .header .header-content .contactelements{
+        width: 15%;
+    }
+    .about .about-content{
+        flex-direction: column;
+    }
+    .about .about-content .title{
+        width: 100%;
+    }
+    .about .about-content .contactelements,
+    .contactme .contact-content .contactelements{
+        display: none !important;
+    }
+    .about .about-skills .languages .items .item{
+        min-width: 25%;
+    }
+    .projects .project-content .projectitems{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .projects .project-content .projectitems .projectitem:hover{
+        min-width: 300px !important;
+    }
+    .projects .project-content .projectitems .projectitem:hover .gosite{
+        transform: translateX(0%);
+    }
+    .contactme .contact-content{
+        flex-direction: column;
+    }
+    .contactme .contact-content .title{
+        width: 100%;
+    }
+    .contactme .contact-content .contactform{
+        width: 90%;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar{
+        position: fixed;
+        width: 100%;
+        height: auto;
+        top: 0;
+        left: 0;
+        padding: 10px 0;
+        flex-direction: row;
+        justify-content: center;
+        transform: translateY(0);
+        background-color: transparent;
+        z-index: 25;
+        isolation: isolate;
+    }
+    .navbar .options{
+        width: 100%;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .navbar .options .option{
+        width: auto;
+        height: auto;
+        margin: 5px;
+    }
+    .navbar .options .option label{
+        font-size: 0.9em;
+        padding: 8px 16px;
+        border-radius: 20px;
+    }
+    .navbar .options .option label a{
+        padding-left: 0;
+        transform: translateX(0);
+    }
+
+    .header .header-content .title .name h1{
+        font-size: 3.2em;
+    }
+    .header .header-content .title .subname{
+        width: 90%;
+        min-height: 60px;
+    }
+    .header .header-content .title .subname p{
+        font-size: 1.2em;
+        width: auto;
+        max-width: 100%;
+        text-shadow: none;
+        overflow: visible;
+        white-space: normal;
+        border-right: none;
+        letter-spacing: normal;
+        animation: none;
+    }
+    .header .header-content .contactelements{
+        width: 20%;
+    }
+
+    .about{
+        height: auto;
+        justify-content: flex-start;
+    }
+    .about .about-content{
+        height: auto;
+        min-height: auto;
+        padding: 30px 0;
+    }
+    .about .about-content .title{
+        height: auto;
+    }
+    .about .about-content .title .name h1{
+        font-size: 2em;
+    }
+    .about .about-content .title .subname p{
+        font-size: 1.3em;
+        border-bottom: none;
+    }
+    .about .about-skills{
+        margin-top: 20px;
+    }
+    .about .about-skills .title .name h1{
+        font-size: 1.6em;
+        text-align: center;
+        padding: 0 10px;
+    }
+    .about .about-skills .languages{
+        overflow: hidden;
+    }
+    .about .about-skills .languages .items .item{
+        min-width: 40%;
+    }
+    .about .about-skills .languages .hoverme h1{
+        font-size: 1.8em;
+    }
+
+    .projects .project-content .title .name h1{
+        font-size: 2.5em;
+    }
+    .projects .project-content .projectitems{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .projects .project-content .gameitems .items{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .projects .project-content .gameitems .items .game_item,
+    .projects .project-content .gameitems .items .game_item:nth-child(1){
+        width: 90%;
+        height: 300px;
+        font-size: 1em;
+        grid-row: auto;
+    }
+    .projects .project-content .gameitems .studio-logo .logo{
+        flex-direction: column;
+    }
+    .projects .project-content .gameitems .studio-logo .logo .value{
+        width: 90%;
+        height: 150px;
+    }
+    .projects .project-content .gameitems .studio-logo .logo .value p{
+        font-size: 2em;
+    }
+
+    .contactme .contact-content .contactform .form{
+        width: 90%;
+    }
+
+    .footer .navigations{
+        flex-direction: column;
+        height: auto;
+        padding: 20px 0;
+    }
+    .footer .navigations .navigation{
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .footer .navigations .navigation ul{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .footer .navigations .links{
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 480px) {
+    .header .header-content .title .name h1{
+        font-size: 2.4em;
+    }
+    .header .header-content .title .subname p{
+        font-size: 1em;
+    }
+    .header .header-content .contactelements{
+        width: 25%;
+    }
+    .header .header-content .contactelements .element{
+        margin: 5px 10px;
+    }
+
+    .about .about-content .title .name h1{
+        font-size: 1.5em;
+    }
+    .about .about-content .title .subname p{
+        font-size: 1em;
+    }
+    .about .about-skills .title .name h1{
+        font-size: 0.9em;
+    }
+    .about .about-skills .languages{
+        width: 90%;
+    }
+    .about .about-skills .languages .items .item{
+        min-width: 60%;
+    }
+
+    .projects .project-content .title .name h1{
+        font-size: 1.8em;
+    }
+    .projects .project-content .projectitems .projectitem{
+        min-width: 90%;
+        max-width: 90%;
+    }
+    .projects .project-content .projectitems .projectitem:hover{
+        min-width: 90% !important;
+    }
+    .projects .project-content .gameitems .title h1{
+        font-size: 2.5em;
+    }
+    .projects .project-content .gameitems .studio-logo .logo .value{
+        height: 100px;
+    }
+    .projects .project-content .gameitems .studio-logo .logo .value p{
+        font-size: 1.3em;
+    }
+
+    .contactme .contact-content .title .name h1{
+        font-size: 2em;
+    }
+    .contactme .contact-content .title .subname p{
+        font-size: 1.2em;
+    }
+    .contactme .contact-content .contactform .form .input-field label{
+        font-size: 1.3em;
+    }
+    .contactme .contact-content .contactform .form .input-field button{
+        font-size: 1.4em;
+    }
+}

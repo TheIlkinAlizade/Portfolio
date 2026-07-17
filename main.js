@@ -179,7 +179,7 @@ $(document).ready(function(){
 
 // Initialize EmailJS
 (function() {
-  emailjs.init("4H95itqoamkBEL2a6"); // Replace with your EmailJS User ID
+  emailjs.init(CONFIG.EMAILJS.PUBLIC_KEY);
 })();
 
 document.getElementById("submit-button").addEventListener("click", function(event) {
@@ -192,7 +192,7 @@ document.getElementById("submit-button").addEventListener("click", function(even
   const message = document.getElementById("message").value;
 
   // Send email using EmailJS
-  emailjs.send("service_ezx8x7i", "template_z44mb3k", {
+  emailjs.send(CONFIG.EMAILJS.SERVICE_ID, CONFIG.EMAILJS.TEMPLATE_ID, {
       name: name,
       email: email,
       subject: subject,
